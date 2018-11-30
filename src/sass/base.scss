@@ -1,11 +1,32 @@
 @import 'reset';
 
+// Variáveis
+// Tamanho de fonte
+$fs1: 1em;
+$fs2: 2em;
+// Cores
+$color-white: #fff;
+$color-dark: #333;
+$color-primary: #286cbc;
+$color-primary-dark: #0c478c;
+$color-secondary: #f3f3f3;
+$color-secondary-dark: #c3c3c3;
+$bg-color-header: #286cbc;
+$bg-color-footer: #286cbc;
+
 @mixin border-radius-mixin($varPx) {
   -webkit-border-radius: $varPx;
   -moz-border-radius: $varPx;
   border-radius: $varPx;
 }
+
 @mixin default-btn() {
+  &:before {
+    content: '>';
+    display: block;
+    position: relative;
+    padding-right: 5px;
+  }
   padding: 14px 25px;
   text-align: center;
   min-height: 20px;
@@ -15,24 +36,39 @@
   letter-spacing: .4px;
   font-weight: 400;
   font-size: 14px;
-  font-size: .875rem;
 }
-
-/* Tamanhos de Fonte */
-$fs1: 1em;
-$fs2: 2em;
-
-/* Paleta de cores */
-$color-primary: #286cbc;
-$color-primary-dark: #0c478c;
-$color-secondary: #fff;
-$color-header: #fff;
-$bg-color-header: #286cbc;
-$bg-color-footer: #286cbc;
-
+.preload {
+  display: none;
+}
 body {
+  &:before {
+    content: url('../all.icons.svg');
+    display: none;
+  }
   background-color: $color-secondary;
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pkm-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  &__item svg{
+    padding: 10px;
+    max-width: 100px;
+  }
+}
+
+//header nav ul.gdgpp__nav {...}
+//header nav ul.gdgpp__nav li a {...}
+//header nav ul.gdgpp__nav li a:hover {...}
 header {
   nav {
     ul.gdgpp__nav {
@@ -52,7 +88,7 @@ header {
         min-width: 140px;
         display: flex;
         flex-basis: 500px;
-        color: $color-header;
+        color: $color-white;
         font-size: $fs1;
         text-decoration: none;
       }
@@ -68,9 +104,10 @@ footer {
   text-align: center;
   padding: 20px;
   background-color: $bg-color-footer;
-  span a{
-    background-color: #ccc;
-    padding: 5px 2px;
+  span a {
+    @include border-radius-mixin(10px);
+    background-color: $color-primary-dark;
+    padding: 10px;
     color: $color-secondary;
   }
 }
