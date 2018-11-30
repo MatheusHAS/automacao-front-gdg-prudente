@@ -31,6 +31,11 @@ Rodando a tarefa para minificar os javascripts (.js)
 gulp scripts
 ```
 
+Rodando a tarefa criar o index.html com base no template em pug (.pug)
+```bash
+gulp views
+```
+
 Rodando a tarefa para fazer um sprite com os svg (.svg)
 ```bash
 gulp icons
