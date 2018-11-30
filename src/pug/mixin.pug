@@ -1,0 +1,6 @@
+mixin catch-you(id)
+  - var pkmId = id+1
+  - var pkm = 'pkm-'+ ((pkmId <= 9) ? `00${pkmId}` : `0${pkmId}`)
+  li.pkm-list__item
+    svg(data-pkm=pkm)
+      use(xlink:href=`public/assets/all.icons.svg#${pkm}`)

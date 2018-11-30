@@ -40,6 +40,7 @@ gulp icons
 * [gulp](https://www.npmjs.com/package/gulp/)
 * [browserSync](https://www.npmjs.com/package/browser-sync/)
 * [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css/)
+* [gulp-pug](https://www.npmjs.com/package/gulp-pug/)
 * [gulp-rename](https://www.npmjs.com/package/gulp-rename/)
 * [gulp-sass](https://www.npmjs.com/package/gulp-sass/)
 * [gulp-svgmin](https://www.npmjs.com/package/gulp-svgmin/)

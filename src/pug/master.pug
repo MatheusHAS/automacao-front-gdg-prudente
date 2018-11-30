@@ -1,0 +1,17 @@
+doctype html
+html(lang='pt-br')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Automação Front-end - GDD Prudente
+    link(rel='stylesheet', href='public/assets/css/all.min.css')
+  body
+    img.preload(src='public/assets/all.icons.svg')
+    include header
+    block content
+    footer
+      span
+        | Desenvolvido por 
+        a(href='https://github.com/MatheusHAS', target='_blank') @MatheusHAS
+    script(src='public/assets/js/scripts.min.js')

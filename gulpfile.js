@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const minify = require('gulp-clean-css')
 const uglify = require('gulp-uglify')
 const sass = require('gulp-sass')
+const pug = require('gulp-pug')
 const rename = require('gulp-rename')
 const svgmin = require('gulp-svgmin')
 const svgstore = require('gulp-svgstore')
@@ -32,6 +33,15 @@ function scripts(done) {
   done();
 }
 
+function views(done) {
+  gulp.src(`${BASE.source}/pug/content.pug`)
+              .pipe(pug())
+              .pipe(rename('index.html'))
+              .pipe(gulp.dest(`./`))
+  browserSync.reload();
+  done();
+}
+
 function icons() {
   return gulp.src(`${BASE.source}/svg/*.svg`)
     // .pipe(svgmin())
@@ -53,10 +63,10 @@ function watch() {
   gulp.watch(`${BASE.source}/sass/*`, styles)
   gulp.watch(`${BASE.source}/svg/*`, icons)
   gulp.watch(`${BASE.source}/js/*`, scripts)
+  gulp.watch(`${BASE.source}/pug/*`, views)
 }
-
-const streamWatch = gulp.parallel(watch, stream)
 const build = gulp.series(styles, scripts, icons)
+const streamWatch = gulp.parallel(build, watch, stream)
 
 // Cria a tarefa 'styles'
 // gulp styles
@@ -69,9 +79,12 @@ gulp.task('icons', icons)
 // Criar a tarefa 'scripts'
 gulp.task('scripts', scripts)
 
+// Criar a tarefa 'views'
+gulp.task('views', views)
+
 // Cria a tarefa 'stream'
 // gulp stream
-gulp.task('stream', )
+gulp.task('stream', stream)
 
 gulp.task('build', build)
 gulp.task('stream', streamWatch)
