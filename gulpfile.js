@@ -65,7 +65,7 @@ function watch() {
   gulp.watch(`${BASE.source}/js/*`, scripts)
   gulp.watch(`${BASE.source}/pug/*`, views)
 }
-const build = gulp.series(styles, scripts, icons)
+const build = gulp.series(styles, scripts, views, icons)
 const streamWatch = gulp.parallel(build, watch, stream)
 
 // Cria a tarefa 'styles'
