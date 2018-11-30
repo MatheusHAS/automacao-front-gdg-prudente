@@ -10,7 +10,11 @@ git clone https://github.com/MatheusHAS/automacao-front-gdg-prudente
 Feito isso, use o [npm](https://www.npmjs.com/get-npm/) para instalar as dependências
 
 ```bash
-npm install
+npm i
+```
+Instalei o gulp como global
+```bash
+npm i -g gulp
 ```
 
 ## Rodando o projeto com BrowserSync
