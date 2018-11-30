@@ -2,8 +2,12 @@
 Projeto para a palestra sobre "automação front-end" ministrado no GDG Prudente#2 em 01/12/18
 
 ## Instalação
+Primeiro clone o projeto usando
+```bash
+git clone https://github.com/MatheusHAS/automacao-front-gdg-prudente
+```
 
-Use o [npm](https://www.npmjs.com/get-npm/) para instalar as dependências
+Feito isso, use o [npm](https://www.npmjs.com/get-npm/) para instalar as dependências
 
 ```bash
 npm install
@@ -16,7 +20,7 @@ O browserSync roda o projeto criando um servidor web local pra você.
 gulp stream
 ```
 
-## Rodando o projeto
+## Rodando tarefas únicas
 Rodando a tarefa para compilar o sass (.scss)
 ```bash
 gulp styles
