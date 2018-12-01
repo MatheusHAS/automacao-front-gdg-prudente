@@ -26,25 +26,25 @@ function styles() {
 
 function scripts(done) {
   gulp.src(`${BASE.source}/js/scripts.js`)
-            .pipe(uglify())
-            .pipe(rename('scripts.min.js'))
-            .pipe(gulp.dest(`${BASE.public}/js`))
+      .pipe(uglify())
+      .pipe(rename('scripts.min.js'))
+      .pipe(gulp.dest(`${BASE.public}/js`))
   browserSync.reload();
   done();
 }
 
 function views(done) {
   gulp.src(`${BASE.source}/pug/content.pug`)
-              .pipe(pug())
-              .pipe(rename('index.html'))
-              .pipe(gulp.dest(`./`))
+      .pipe(pug())
+      .pipe(rename('index.html'))
+      .pipe(gulp.dest(`./`))
   browserSync.reload();
   done();
 }
 
 function icons() {
   return gulp.src(`${BASE.source}/svg/*.svg`)
-    // .pipe(svgmin())
+    .pipe(svgmin())
     .pipe(svgstore())
     .pipe(rename({ basename: 'all.icons' }))
     .pipe(gulp.dest(`${BASE.public}`))

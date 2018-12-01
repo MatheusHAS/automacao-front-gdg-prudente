@@ -1,0 +1,23 @@
+@mixin border-radius-mixin($varPx) {
+  -webkit-border-radius: $varPx;
+  -moz-border-radius: $varPx;
+  border-radius: $varPx;
+}
+
+@mixin default-btn() {
+  &:before {
+    content: '>';
+    display: block;
+    position: relative;
+    padding-right: 5px;
+  }
+  padding: 14px 25px;
+  text-align: center;
+  min-height: 20px;
+  transition: all .25s linear;
+  line-height: 1.3555;
+  text-decoration: none;
+  letter-spacing: .4px;
+  font-weight: 400;
+  font-size: 14px;
+}

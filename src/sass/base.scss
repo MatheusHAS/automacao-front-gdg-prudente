@@ -1,4 +1,5 @@
 @import 'reset';
+@import 'mixins';
 
 // Variáveis
 // Tamanho de fonte
@@ -7,64 +8,58 @@ $fs2: 2em;
 // Cores
 $color-white: #fff;
 $color-dark: #333;
-$color-primary: #286cbc;
-$color-primary-dark: #0c478c;
-$color-secondary: #f3f3f3;
-$color-secondary-dark: #c3c3c3;
+$color-blue: #286cbc;
+$color-blue-dark: #0c478c;
+$color-gray: #f3f3f3;
+$color-gray-dark: #c3c3c3;
 $bg-color-header: #286cbc;
 $bg-color-footer: #286cbc;
 
-@mixin border-radius-mixin($varPx) {
-  -webkit-border-radius: $varPx;
-  -moz-border-radius: $varPx;
-  border-radius: $varPx;
-}
-
-@mixin default-btn() {
-  &:before {
-    content: '>';
-    display: block;
-    position: relative;
-    padding-right: 5px;
-  }
-  padding: 14px 25px;
-  text-align: center;
-  min-height: 20px;
-  transition: all .25s linear;
-  line-height: 1.3555;
-  text-decoration: none;
-  letter-spacing: .4px;
-  font-weight: 400;
-  font-size: 14px;
-}
-.preload {
-  display: none;
-}
 body {
   &:before {
     content: url('../all.icons.svg');
     display: none;
   }
-  background-color: $color-secondary;
+  // Background
+  background-color: $color-gray;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.pkm-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  &__item svg{
-    padding: 10px;
-    max-width: 100px;
+  ul.pkm-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    &__item svg{
+      padding: 10px;
+      max-width: 100px;
+    }
   }
 }
+
+/*
+// Trecho de CSS Gerado a partir do SCSS:
+.container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center
+}
+.container ul.pkm-list{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:30px;
+  margin-bottom:50px
+}
+.container ul.pkm-list__item svg{
+  padding:10px;
+  max-width:100px
+}
+*/
 
 //header nav ul.gdgpp__nav {...}
 //header nav ul.gdgpp__nav li a {...}
@@ -79,8 +74,8 @@ header {
       padding: 20px;
       li a{
         &:hover {
-          background: $color-secondary;
-          color: $color-primary;
+          background: $color-gray;
+          color: $color-blue;
         }        
         @include default-btn();
         @include border-radius-mixin(10px);
@@ -100,14 +95,14 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  color: $color-secondary;
+  color: $color-gray;
   text-align: center;
   padding: 20px;
   background-color: $bg-color-footer;
   span a {
     @include border-radius-mixin(10px);
-    background-color: $color-primary-dark;
+    background-color: $color-blue-dark;
     padding: 10px;
-    color: $color-secondary;
+    color: $color-gray;
   }
 }
